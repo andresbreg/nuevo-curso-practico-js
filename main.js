@@ -1,41 +1,14 @@
 const h1 = document.querySelector('h1');
-const p = document.querySelectorAll('p');
-const pConClase = document.getElementsByClassName('clase');
-const pConID = document.getElementById('id');
-const input = document.querySelector('input');
+const form = document.querySelector('#form');
+const input1 = document.querySelector('#calculo1');
+const input2 = document.querySelector('#calculo2');
+const btn = document.querySelector('#btnCalcular');
+const pResult = document.querySelector('#result');
 
-console.log(input.value);
 
-console.log ({
-    h1,
-    p,
-    pConClase,
-    id,
-    input
-});
+form.addEventListener('click', sumarInputsValues);
 
-h1.innerText = 'Nuevo Título';
-h1.innerHTML = 'Nuevo<br>Título';
-
-console.log(h1.getAttribute('class'));
-
-h1.setAttribute('class', 'mititulo');
-console.log(h1.getAttribute('class'));
-
-h1.classList.add('titulo');
-console.log(h1.getAttribute('class'));
-
-h1.classList.remove('mititulo');
-console.log(h1.getAttribute('class'));
-
-// h1.classList.toggle('mititulo');
-// h1.classList.contains('mititulo');
-
-input.value = "";
-
-const img = document.createElement('img');
-img.setAttribute('src', 'https://conceptodefinicion.de/wp-content/uploads/2020/03/Cielo3.jpg');
-console.log(img);
-
-id.innerHTML = "";
-id.appendChild(img);
+function sumarInputsValues(event) {
+    const sumaInputs = parseInt(input1.value) + parseInt(input2.value);
+    pResult.innerText = "Resultado: " + sumaInputs;
+}
